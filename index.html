@@ -5,40 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorare Analytics</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
             padding-top: 50px;
         }
         .container {
-            margin: auto;
-            width: 60%;
-            border: 3px solid #333;
-            padding: 10px;
+            padding: 2rem;
         }
-        h1 {
-            color: #333;
+        .card {
+            margin-bottom: 1rem;
         }
-        a {
-            display: block;
-            margin: 10px;
+        .card:hover {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .card a {
             text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            color: #0056b3;
+            color: inherit;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sorare xG/xGA fixture planner</h1>
-        <p>Select a page to view:</p>
-        <a href="xG_table_std.html">xG (Only based on Opponent's Defense)</a>
-        <a href="xGA_table_std.html">xGA (Only based on Opponent's Offense)</a>
-        <a href="xGA_table_adj.html">xG (Team Offense vs. Opponent Defense)</a>
-        <a href="xGA_table_adj.html">xGA (Team Defense vs. Opponent Offense)</a>
+        <h1 class="mb-4">Sorare xG/xGA Fixture Planner</h1>
+        <p class="lead">
+            Plan teams for upcoming game weeks based on historical and adjusted performance metrics.
+            These tables can be used to plan teams for the upcoming game weeks. All of them are sorted by average values in the next up to 5 matches (whenever they happen).
+            Choose between tables based only on the opposition, indicating relatively lighter/more difficult fixtures coming up or tables based on both the own team's attack/defense relative to the opponent.
+            Hover over cells to see the opponent, whether it's a Home (H) or Away (A) fixture, xG and xGA values against this opponent.
+        </p>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Standard xG</h5>
+                        <p class="card-text">Based on the opponent's historical defense.</p>
+                        <a href="xG_table_std.html" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Standard xGA</h5>
+                        <p class="card-text">Based on the opponent's historical offense.</p>
+                        <a href="xGA_table_std.html" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Adjusted xG</h5>
+                        <p class="card-text">Team offense vs. opponent defense.</p>
+                        <a href="xGA_table_adj.html" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Adjusted xGA</h5>
+                        <p class="card-text">Team defense vs. opponent offense.</p>
+                        <a href="xGA_table_adj.html" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
