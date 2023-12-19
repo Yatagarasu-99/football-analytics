@@ -16,13 +16,23 @@
         }
         .card {
             margin-bottom: 1rem;
+            cursor: pointer;
         }
         .card:hover {
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         }
-        .card a {
-            text-decoration: none;
-            color: inherit;
+        .stretched-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
         }
     </style>
 </head>
@@ -30,50 +40,49 @@
     <div class="container">
         <h1 class="mb-4">Sorare xG/xGA Fixture Planner</h1>
         <p class="lead">
-            Plan teams for upcoming game weeks based on historical and adjusted performance metrics.
-            These tables can be used to plan teams for the upcoming game weeks. All of them are sorted by average values in the next up to 5 matches (whenever they happen).
-            Choose between tables based only on the opposition, indicating relatively lighter/more difficult fixtures coming up or tables based on both the own team's attack/defense relative to the opponent.
-            Hover over cells to see the opponent, whether it's a Home (H) or Away (A) fixture, xG and xGA values against this opponent.
+            Plan teams for upcoming game weeks based on historical and adjusted performance metrics. The tables are sorted by average values in the next up to 5 matches (whenever they happen). Choose between tables based only on the opposition, indicating relatively lighter/more difficult fixtures coming up or tables based on the team's attack/defense relative to the opponent. Hover over cells to see the opponent, whether it's a Home (H) or Away (A) fixture, and xG and xGA values against this opponent.
         </p>
 
-        <div class="row">
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Standard xG</h5>
-                        <p class="card-text">Based on the opponent's historical defense.</p>
-                        <a href="xG_table_std.html" class="stretched-link"></a>
-                    </div>
+        <!-- Group 1: Standard Predictions -->
+        <div class="card-deck mb-4">
+            <div class="card" onclick="location.href='xG_table_std.html';">
+                <div class="card-header">Standard Predictions</div>
+                <div class="card-body">
+                    <h5 class="card-title">Standard xG</h5>
+                    <p class="card-text">Based on the opponent's historical defense.</p>
+                    <div class="stretched-link"></div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Standard xGA</h5>
-                        <p class="card-text">Based on the opponent's historical offense.</p>
-                        <a href="xGA_table_std.html" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Adjusted xG</h5>
-                        <p class="card-text">Team offense vs. opponent defense.</p>
-                        <a href="xGA_table_adj.html" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Adjusted xGA</h5>
-                        <p class="card-text">Team defense vs. opponent offense.</p>
-                        <a href="xGA_table_adj.html" class="stretched-link"></a>
-                    </div>
+            <div class="card" onclick="location.href='xGA_table_std.html';">
+                <div class="card-header">Standard Predictions</div>
+                <div class="card-body">
+                    <h5 class="card-title">Standard xGA</h5>
+                    <p class="card-text">Based on the opponent's historical offense.</p>
+                    <div class="stretched-link"></div>
                 </div>
             </div>
         </div>
+
+        <!-- Group 2: Adjusted Predictions -->
+        <div class="card-deck">
+            <div class="card" onclick="location.href='xG_table_adj.html';">
+                <div class="card-header">Adjusted Predictions</div>
+                <div class="card-body">
+                    <h5 class="card-title">Adjusted xG</h5>
+                    <p class="card-text">Team offense vs. opponent defense.</p>
+                    <div class="stretched-link"></div>
+                </div>
+            </div>
+            <div class="card" onclick="location.href='xGA_table_adj.html';">
+                <div class="card-header">Adjusted Predictions</div>
+                <div class="card-body">
+                    <h5 class="card-title">Adjusted xGA</h5>
+                    <p class="card-text">Team defense vs. opponent offense.</p>
+                    <div class="stretched-link"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Bootstrap JS and dependencies -->
