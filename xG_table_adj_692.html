@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>xGA: Historic average xG of opponents</title>
+<title>Historic average xG of teams relative to average xGA of their opponents</title>
 </head>
 <body>
 <h2>Last updated: 2026-04-13</h2>
@@ -44,9 +44,9 @@
     function goToGW() {
     var gwSelect = document.getElementById("gwFilter");
     var selectedGW = gwSelect.options[gwSelect.selectedIndex].value;
-    window.location.href = "xGA_table_std_" + selectedGW + ".html";
+    window.location.href = "xG_table_adj_" + selectedGW + ".html";
     }
     </script>
-    <a href="index.html" class="back-button">Back to Index</a><a href="xGA_table_std_677.html" class="min-gw-button">Back to GW 677</a><h2>xGA: Historic average xG of opponents</h2><select id="leagueFilter" onchange="filterTable()"><option value="All">All Leagues</option></select><select id="divisionFilter" onchange="filterTable()"><option value="All">All Divisions</option></select><select id="newDivisionFilter" onchange="filterTable()"><option value="All">All New Divisions</option></select><select id="gwFilter" onchange="goToGW()"><option value="677">GW 677</option><option value="678">GW 678</option><option value="679">GW 679</option><option value="680">GW 680</option><option value="681">GW 681</option><option value="682">GW 682</option><option value="683">GW 683</option><option value="684">GW 684</option><option value="685">GW 685</option><option value="686">GW 686</option><option value="687">GW 687</option><option value="688">GW 688</option><option value="689">GW 689</option><option value="690" selected="selected">GW 690</option><option value="691">GW 691</option><option value="692">GW 692</option></select><table id="dataTable"><tr><th>Team</th><th>League</th><th>Division</th><th>New Division</th><th>Average_First_5</th></tr></table>
+    <a href="index.html" class="back-button">Back to Index</a><a href="xG_table_adj_677.html" class="min-gw-button">Back to GW 677</a><h2>Historic average xG of teams relative to average xGA of their opponents</h2><select id="leagueFilter" onchange="filterTable()"><option value="All">All Leagues</option></select><select id="divisionFilter" onchange="filterTable()"><option value="All">All Divisions</option></select><select id="newDivisionFilter" onchange="filterTable()"><option value="All">All New Divisions</option></select><select id="gwFilter" onchange="goToGW()"><option value="677">GW 677</option><option value="678">GW 678</option><option value="679">GW 679</option><option value="680">GW 680</option><option value="681">GW 681</option><option value="682">GW 682</option><option value="683">GW 683</option><option value="684">GW 684</option><option value="685">GW 685</option><option value="686">GW 686</option><option value="687">GW 687</option><option value="688">GW 688</option><option value="689">GW 689</option><option value="690">GW 690</option><option value="691">GW 691</option><option value="692" selected="selected">GW 692</option></select><table id="dataTable"><tr><th>Team</th><th>League</th><th>Division</th><th>New Division</th><th>Average_First_5</th></tr></table>
 </body>
 </html>
